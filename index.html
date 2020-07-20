@@ -30,7 +30,7 @@
             <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
         </ul>
         <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="loginButton">
                 <span class="fa fa-sign-in"></span> Login
             </a>
         </span>
@@ -43,7 +43,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Login</h4>
-                <button type="button" class="close" data-dismiss="modal">
+                <button type="button" class="close" id="closeLogin">
                     &times;
                 </button>
             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">
+                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="closeLogin2">
                             Cancel
                         </button>
                         <button type="submit" class="btn btn-primary btn-sm ml-1">Sign In
@@ -83,7 +83,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Reserve a Table</h4>
-                <button type="button" class="close" data-dismiss="modal">
+                <button type="button" class="close" id="closeReserve">
                     &times;
                 </button>
             </div>
@@ -149,7 +149,7 @@
 
                     </div>
                     <div class="form-row col-sm-10">
-                        <button type="button" class="btn btn-secondary btn-sm mr-1 offset-2" data-dismiss="modal">
+                        <button type="button" class="btn btn-secondary btn-sm mr-1 offset-2" id="closeReserve2">
                             Cancel
                         </button>
                         <button type="submit" class="btn btn-primary btn-sm mr-auto">Reserve
@@ -172,7 +172,7 @@
                     <img src="./img/logo.png" class="img-fluid">
                     </div>
                     <div class="col-12 col-sm align-self-center">
-                    <a type="button" class="btn nav-link btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">
+                    <a type="button" class="btn nav-link btn-warning btn-block" id="reserveButton">
                         Reserve Table</a>
                     </div>
             </div>
@@ -357,7 +357,30 @@
 
             });
 
+            $('#reserveButton').click(function(){
+                $('#reserveModal').modal('show');
+            });
+
+            $('#closeReserve').click(function(){
+                $('#reserveModal').modal('hide');
+            });
+
+            $('#closeReserve2').click(function(){
+                $('#reserveModal').modal('hide');
+            });
+
+            $('#loginButton').click(function(){
+                $('#loginModal').modal('show');
+            });
+
+            $('#closeLogin').click(function(){
+                $('#loginModal').modal('hide');
+            });
+            $('#closeLogin2').click(function(){
+                $('#loginModal').modal('hide');
+            });
         });
+
 
     </script>
 
